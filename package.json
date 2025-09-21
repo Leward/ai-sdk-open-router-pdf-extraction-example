@@ -1,0 +1,26 @@
+{
+  "name": "ai-sdk-open-router-pdf-extraction-example",
+  "version": "1.0.0",
+  "description": "A quick example for PDF summary extraction",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["ai", "openrouter", "vercel", "ai-sdk", "typescript", "zod", "object-generation"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@openrouter/ai-sdk-provider": "^1.2.0",
+    "ai": "^5.0.48",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
