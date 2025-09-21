@@ -11,11 +11,14 @@ const BookSchema = z.object({
     summary: z.string(),
 });
 
+const modelId = 'mistralai/mistral-small-3.2-24b-instruct'; // fails with mistral
+// const modelId = 'openai/gpt-5-nano' // will work with gpt-5-nano
+
 const apiKey = process.env.OPENROUTER_API_KEY;
 if (!apiKey) throw new Error('OPENROUTER_API_KEY missing');
 
 const result = await generateObject({
-    model: createOpenRouter({ apiKey })('mistralai/mistral-small-3.2-24b-instruct'),
+    model: createOpenRouter({ apiKey })(modelId),
     schema: BookSchema,
     messages: [
         {
