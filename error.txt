@@ -1,0 +1,169 @@
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+APICallError [AI_APICallError]: Invalid JSON response
+    at <anonymous> (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/response-handler.ts:151:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async postToApi (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:136:14)
+    ... 3 lines matching cause stack trace ...
+    at async _retryWithExponentialBackoff (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/util/retry-with-exponential-backoff.ts:96:12)
+    at async fn (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/generate-object/generate-object.ts:328:32)
+    at async <anonymous> (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/telemetry/record-span.ts:18:22)
+    at async generateObject (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/generate-object/generate-object.ts:282:12) {
+  cause: _TypeValidationError2 [AI_TypeValidationError]: Type validation failed: Value: {"id":"gen-1758491553-0G10tHNiXMRCpOh3YEtD","provider":"Mistral","model":"mistralai/mistral-small-3.2-24b-instruct","object":"chat.completion","created":1758491555,"choices":[{"logprobs":null,"finish_reason":"stop","native_finish_reason":"stop","index":0,"message":{"role":"assistant","content":"{\n  \"title\": \"Building Blocks Student Handout: Sample Credit Card Statement\",\n  \"author\": \"Not specified\",\n  \"genre\": \"Educational Material\",\n  \"publishedYear\": 2022,\n  \"summary\": \"This document is a sample credit card statement provided as a student handout. It includes detailed information about a sample account holder, Susan Doe, such as her account number, address, and payment information. The statement outlines the previous balance, payments, purchases, and interest charged. It also provides details about the credit access line, available credit, and finance charge summary, including periodic rates and annual percentage rates (APR) for purchases and advances. The document is intended for educational purposes to help students understand the components of a credit card statement.\"\n}","refusal":null,"reasoning":null,"annotations":[{"type":"file","file":{"hash":"75825d6c627c3aa792a406fe63c531d4388805f055f1330c3ebc58ca2ae2518d","name":"","content":[{"type":"text","text":"<file name=\"\">"},{"type":"text","text":"# (3) BUILDING BLOCKS STUDENT HANDOUT\n\n## Sample credit card statement\n\n**Name:** Susan Doe **Address:** 1234 Main Street, Anytown, USA **Account Number:** 12345-67-8907\n\n**For Lost or Stolen Card, Call:** 1-800-XXX-XXXX\n\n### Payment Information\n\n**Date:** 12/30/XX **Payment Due Date:** 1/23/XX **New Balance:** $1392.71 **Minimum Payment:** $25\n\n|  Account Summary |  | Payment Information |   |\n| --- | --- | --- | --- |\n|  Previous Balance | $482.42 | New Balance | $1,392.71  |\n|  Payment, Credits | -$350.42 | Payment Due Date | 1/23/XX  |\n|  Purchases | $1,258.56 | Minimum Payment Due | $25  |\n|  Cash Advances | $0 |  |   |\n|  Balance Transfers | $0 |  |   |\n|  Fees Charged | $0 |  |   |\n|  Interest Charged | $2.15 |  |   |\n|  New Balance | $1,392.71 |  |   |\n\n|  Opening/Closing Date | 11/27/XX - 12/26/XX  |\n| --- | --- |\n|  Credit Access Line | $12,000  |\n|  Available Credit | $10,607.29  |\n|  Cash Access Line | $2,000  |\n|  Available for Cash | $2,000  |\n\n|  Past Due Amount | $0  |\n| --- | --- |\n|  Balance Over the Credit Access Line | $0  |\n\n|  Finance Charge Summary | Purchases | Advances  |\n| --- | --- | --- |\n|  Periodic Rate | 1.65% | 0.54%  |\n|  Annual Percentage Rate (APR) | 19.80% | 6.48%  |\n\n**BUILDING BLOCKS STUDENT HANDOUT** Sample credit card statement Summer 2022"},{"type":"text","text":"</file>"}]}}]}}],"usage":{"prompt_tokens":536,"completion_tokens":161,"total_tokens":697}}.
+  Error message: [{"code":"invalid_value","values":["url_citation"],"path":["choices",0,"message","annotations",0,"type"],"message":"Invalid input: expected \"url_citation\""},{"expected":"object","code":"invalid_type","path":["choices",0,"message","annotations",0,"url_citation"],"message":"Invalid input: expected object, received undefined"}]
+      at Object.validate (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/validator.ts:69:18)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async safeValidateTypes (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/validate-types.ts:64:20)
+      at async safeParseJSON (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/parse-json.ts:105:12)
+      at async <anonymous> (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/response-handler.ts:143:26)
+      at async postToApi (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/node_modules/.pnpm/@ai-sdk+provider-utils@3.0.1_zod@3.25.76/node_modules/@ai-sdk/provider-utils/src/post-to-api.ts:136:14)
+      at async OpenRouterChatLanguageModel.doGenerate (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/@openrouter/ai-sdk-provider/src/chat/index.ts:213:50)
+      at async fn (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/generate-object/generate-object.ts:357:30)
+      at async <anonymous> (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/telemetry/record-span.ts:18:22)
+      at async _retryWithExponentialBackoff (/home/leward/dev/ai-sdk-open-router-pdf-extraction-example/node_modules/ai/src/util/retry-with-exponential-backoff.ts:96:12) {
+    cause: [
+      {
+        code: 'invalid_value',
+        values: [ 'url_citation' ],
+        path: [ 'choices', 0, 'message', 'annotations', 0, 'type' ],
+        message: 'Invalid input: expected "url_citation"'
+      },
+      {
+        expected: 'object',
+        code: 'invalid_type',
+        path: [ 'choices', 0, 'message', 'annotations', 0, 'url_citation' ],
+        message: 'Invalid input: expected object, received undefined'
+      }
+    ],
+    value: {
+      id: 'gen-1758491553-0G10tHNiXMRCpOh3YEtD',
+      provider: 'Mistral',
+      model: 'mistralai/mistral-small-3.2-24b-instruct',
+      object: 'chat.completion',
+      created: 1758491555,
+      choices: [
+        {
+          logprobs: null,
+          finish_reason: 'stop',
+          native_finish_reason: 'stop',
+          index: 0,
+          message: {
+            role: 'assistant',
+            content: '{\n' +
+              '  "title": "Building Blocks Student Handout: Sample Credit Card Statement",\n' +
+              '  "author": "Not specified",\n' +
+              '  "genre": "Educational Material",\n' +
+              '  "publishedYear": 2022,\n' +
+              '  "summary": "This document is a sample credit card statement provided as a student handout. It includes detailed information about a sample account holder, Susan Doe, such as her account number, address, and payment information. The statement outlines the previous balance, payments, purchases, and interest charged. It also provides details about the credit access line, available credit, and finance charge summary, including periodic rates and annual percentage rates (APR) for purchases and advances. The document is intended for educational purposes to help students understand the components of a credit card statement."\n' +
+              '}',
+            refusal: null,
+            reasoning: null,
+            annotations: [Array]
+          }
+        }
+      ],
+      usage: { prompt_tokens: 536, completion_tokens: 161, total_tokens: 697 }
+    },
+    [Symbol(vercel.ai.error)]: true,
+    [Symbol(vercel.ai.error.AI_TypeValidationError)]: true
+  },
+  url: 'https://openrouter.ai/api/v1/chat/completions',
+  requestBodyValues: {
+    model: 'mistralai/mistral-small-3.2-24b-instruct',
+    models: undefined,
+    logit_bias: undefined,
+    logprobs: undefined,
+    top_logprobs: undefined,
+    user: undefined,
+    parallel_tool_calls: undefined,
+    max_tokens: undefined,
+    temperature: undefined,
+    top_p: undefined,
+    frequency_penalty: undefined,
+    presence_penalty: undefined,
+    seed: undefined,
+    stop: undefined,
+    response_format: {
+      type: 'json_schema',
+      json_schema: {
+        schema: {
+          '$schema': 'http://json-schema.org/draft-07/schema#',
+          type: 'object',
+          properties: {
+            title: [Object],
+            author: [Object],
+            genre: [Object],
+            publishedYear: [Object],
+            summary: [Object]
+          },
+          required: [ 'title', 'author', 'genre', 'publishedYear', 'summary' ],
+          additionalProperties: false
+        },
+        strict: true,
+        name: 'response'
+      }
+    },
+    top_k: undefined,
+    messages: [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'text',
+            text: 'Generate general information about this document.',
+            cache_control: undefined
+          },
+          { type: 'file', file: [Object] }
+        ]
+      }
+    ],
+    include_reasoning: undefined,
+    reasoning: undefined,
+    usage: undefined,
+    plugins: undefined,
+    web_search_options: undefined,
+    provider: undefined
+  },
+  statusCode: 200,
+  responseHeaders: {
+    'access-control-allow-origin': '*',
+    'cf-ray': '982cca53fdfda1ec-YYZ',
+    connection: 'keep-alive',
+    'content-encoding': 'gzip',
+    'content-type': 'application/json',
+    date: 'Sun, 21 Sep 2025 21:52:35 GMT',
+    'permissions-policy': 'payment=(self "https://checkout.stripe.com" "https://connect-js.stripe.com" "https://js.stripe.com" "https://*.js.stripe.com" "https://hooks.stripe.com")',
+    'referrer-policy': 'no-referrer, strict-origin-when-cross-origin',
+    server: 'cloudflare',
+    'transfer-encoding': 'chunked',
+    vary: 'Accept-Encoding',
+    'x-content-type-options': 'nosniff'
+  },
+  responseBody: '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '\n' +
+    '         \n' +
+    '{"id":"gen-1758491553-0G10tHNiXMRCpOh3YEtD","provider":"Mistral","model":"mistralai/mistral-small-3.2-24b-instruct","object":"chat.completion","created":1758491555,"choices":[{"logprobs":null,"finish_reason":"stop","native_finish_reason":"stop","index":0,"message":{"role":"assistant","content":"{\\n  \\"title\\": \\"Building Blocks Student Handout: Sample Credit Card Statement\\",\\n  \\"author\\": \\"Not specified\\",\\n  \\"genre\\": \\"Educational Material\\",\\n  \\"publishedYear\\": 2022,\\n  \\"summary\\": \\"This document is a sample credit card statement provided as a student handout. It includes detailed information about a sample account holder, Susan Doe, such as her account number, address, and payment information. The statement outlines the previous balance, payments, purchases, and interest charged. It also provides details about the credit access line, available credit, and finance charge summary, including periodic rates and annual percentage rates (APR) for purchases and advances. The document is intended for educational purposes to help students understand the components of a credit card statement.\\"\\n}","refusal":null,"reasoning":null,"annotations":[{"type":"file","file":{"hash":"75825d6c627c3aa792a406fe63c531d4388805f055f1330c3ebc58ca2ae2518d","name":"","content":[{"type":"text","text":"<file name=\\"\\">"},{"type":"text","text":"# (3) BUILDING BLOCKS STUDENT HANDOUT\\n\\n## Sample credit card statement\\n\\n**Name:** Susan Doe **Address:** 1234 Main Street, Anytown, USA **Account Number:** 12345-67-8907\\n\\n**For Lost or Stolen Card, Call:** 1-800-XXX-XXXX\\n\\n### Payment Information\\n\\n**Date:** 12/30/XX **Payment Due Date:** 1/23/XX **New Balance:** $1392.71 **Minimum Payment:** $25\\n\\n|  Account Summary |  | Payment Information |   |\\n| --- | --- | --- | --- |\\n|  Previous Balance | $482.42 | New Balance | $1,392.71  |\\n|  Payment, Credits | -$350.42 | Payment Due Date | 1/23/XX  |\\n|  Purchases | $1,258.56 | Minimum Payment Due | $25  |\\n|  Cash Advances | $0 |  |   |\\n|  Balance Transfers | $0 |  |   |\\n|  Fees Charged | $0 |  |   |\\n|  Interest Charged | $2.15 |  |   |\\n|  New Balance | $1,392.71 |  |   |\\n\\n|  Opening/Closing Date | 11/27/XX - 12/26/XX  |\\n| --- | --- |\\n|  Credit Access Line | $12,000  |\\n|  Available Credit | $10,607.29  |\\n|  Cash Access Line | $2,000  |\\n|  Available for Cash | $2,000  |\\n\\n|  Past Due Amount | $0  |\\n| --- | --- |\\n|  Balance Over the Credit Access Line | $0  |\\n\\n|  Finance Charge Summary | Purchases | Advances  |\\n| --- | --- | --- |\\n|  Periodic Rate | 1.65% | 0.54%  |\\n|  Annual Percentage Rate (APR) | 19.80% | 6.48%  |\\n\\n**BUILDING BLOCKS STUDENT HANDOUT** Sample credit card statement Summer 2022"},{"type":"text","text":"</file>"}]}}]}}],"usage":{"prompt_tokens":536,"completion_tokens":161,"total_tokens":697}}',
+  isRetryable: false,
+  data: undefined,
+  [Symbol(vercel.ai.error)]: true,
+  [Symbol(vercel.ai.error.AI_APICallError)]: true
+}
+
+Node.js v22.15.1
