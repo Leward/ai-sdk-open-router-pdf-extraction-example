@@ -17,6 +17,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@ai-sdk/mistral": "^2.0.14",
     "@openrouter/ai-sdk-provider": "^1.2.0",
     "ai": "^5.0.48",
     "dotenv": "^17.2.2",
